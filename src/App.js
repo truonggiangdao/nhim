@@ -1,7 +1,7 @@
 import moment from 'moment';
 import AppHeader from './AppHeader';
 import './App.css';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 const calcVideoSize = () => {
   const { clientWidth } = document.body;
@@ -67,16 +67,18 @@ function App() {
       window.removeEventListener('resize', update);
     };
   }, []);
+  const videoRef = useRef(null);
 
   return (
     <div className="App">
       <video
+        ref={videoRef}
         onPlay={onVideoStart}
         muted loop width={size.w} height={size.h}
         style={style} autoPlay preload="true">
         <source src="video/nhim.MOV" type="video/mp4" />
       </video>
-      <AppHeader hide={hide} birthDay={birthDay.format('DD/MM/yyyy')} age={filteredAges} />
+      <AppHeader videoRef={videoRef} hide={hide} birthDay={birthDay.format('DD/MM/yyyy')} age={filteredAges} />
     </div>
   );
 }

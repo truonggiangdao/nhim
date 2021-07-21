@@ -1,0 +1,26 @@
+.img-container {
+    position: relative;
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+}
+
+.img-container.hide {
+    opacity: 0;
+}
+
+.player {
+    display: block;
+    width: 0px;
+    height: 0px;
+    border: 10vmin solid transparent;
+    border-left-color: white;
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 5vmin);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.img-container.hide .player {
+    display: none;
+}
