@@ -5,6 +5,12 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  opacity: 1;
+  transition: opacity 2s ease-in-out;
+}
+
+.App-logo.hide {
+  opacity: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,7 +20,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,6 +27,11 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .App-link {
@@ -35,4 +45,40 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+video {
+  position: fixed;
+}
+
+.title {
+  margin-top: 60px;
+  margin-bottom: 0;
+  font-size: 4rem;
+  text-shadow: 3px 3px rgb(255 255 255 / 30%);
+  color: white;
+}
+
+.sub-title {
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  text-shadow: 3px 3px rgb(0, 0, 0, .4);
+}
+
+.lable {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.5rem;
+}
+
+.content {
+  font-size: 1.2rem;
+  color: pink;
+  text-shadow: 1px 1px black;
+}
+
+.my-2 {
+  margin: 20px 0 0;
+  padding: 5px 10px;
+  background-color: #8e0a37;
 }
